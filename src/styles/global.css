@@ -1,0 +1,12 @@
+/* src/styles/global.css */
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@300&display=swap');
+
+body {
+  font-family: 'Manrope', sans-serif;
+  font-weight: 300;
+  font-size: 16px;
+  background: linear-gradient(to bottom, #0f0f0f, #1a1a1a); /* Supastarter tarzı koyu degrade */
+  color: #e8e8e8;
+  margin: 0;
+  padding: 0;
+}
