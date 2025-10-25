@@ -1,15 +1,15 @@
-# Backend Dockerfile
+# Temel Python imajı
 FROM python:3.11-slim
+
+# Çalışma dizini
 WORKDIR /app
-ENV PYTHONDONTWRITEBYTECODE=1
-ENV PYTHONUNBUFFERED=1
 
-RUN apt-get update && apt-get install -y build-essential python3-dev libatlas-base-dev && rm -rf /var/lib/apt/lists/*
-
-COPY requirements.txt ./
+# Gereksinimleri kopyala ve yükle
+COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
+# Tüm proje dosyalarını kopyala
 COPY . .
 
-EXPOSE 8000
+# Uvicorn ile başlat
 CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8000"]
